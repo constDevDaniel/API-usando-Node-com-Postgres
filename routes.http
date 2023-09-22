@@ -1,0 +1,26 @@
+POST http://localhost:2222/videos
+Content-Type: application/json
+Accept-Language: pt-BR
+
+{
+    "title": "Video 1",
+    "description": "Video 1 description",
+    "duration": 120
+}
+
+###
+GET http://localhost:2222/videos
+
+###
+PUT http://localhost:2222/videos/2e82b7c9-cd9c-405b-9131-159795556392
+Content-Type: application/json
+Accept-Language: pt-BR
+
+{
+    "title": "Video New Title",
+    "description": " New Video description",
+    "duration": 180
+}
+
+###
+DELETE http://localhost:2222/videos/195b4aca-b0ea-4267-8402-ed3218746103
