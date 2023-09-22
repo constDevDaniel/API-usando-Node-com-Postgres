@@ -3,10 +3,13 @@ Content-Type: application/json
 Accept-Language: pt-BR
 
 {
-    "title": "Video 1",
+    "title": "Video node",
     "description": "Video 1 description",
     "duration": 120
 }
+
+###
+GET http://localhost:2222/videos?search=node
 
 ###
 GET http://localhost:2222/videos

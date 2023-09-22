@@ -7,8 +7,11 @@ const database = new DatabaseMemory();
 server.use(express.json());
 
 server.get("/videos", (req, res) => {
+	const search = req.query.search;
+
+
 	// usando o banco de dados em memoria para listar todos os videos
-	const allVideos = database.list();
+	const allVideos = database.list(search);
 
 	return res.send(allVideos);
 });
@@ -19,7 +22,7 @@ server.post("/videos", (req, res) => {
 	database.create({
 		title,
 		description,
-		duration,
+		duration
 	});
 	return res.status(201).send(); 
 });

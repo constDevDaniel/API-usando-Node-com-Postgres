@@ -5,13 +5,22 @@ export class DatabaseMemory {
 
 	//Set (não aceita valores duplicados), Map (chave e valor)
 
-	list() {
-		return Array.from(this.#videos.entries()).map((videoArray) => {
+	list(search) {
+		return Array.from(this.#videos.entries())
+		.map((videoArray) => {
 			const id = videoArray[0];
 			const data = videoArray[1];
-
-			return {id, ...data};
-		});
+			return { 
+				id, 
+				...data //usando rest operator para pegar todas as propriedades do data
+			};
+		})
+		.filter((video) => {
+			if (search) {
+				return video.title.includes(search)
+			}
+			return true
+		})
 	}
 
 	//adicionando os videos ao array de videos (salvando os videos)
