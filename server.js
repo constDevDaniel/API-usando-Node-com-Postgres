@@ -13,30 +13,28 @@ server.get("/videos", async (req, res) => {
 	return res.send(allVideos);
 });
 
-server.post("/videos", async(req, res) => {
+server.post("/videos", async (req, res) => {
 	const { title, description, duration } = req.body;
 	await database.create({
 		title,
 		description,
-		duration
+		duration,
 	});
-	return res.status(201).send(); 
+	return res.status(201).send();
 });
 
-server.put("/videos/:id", async(req, res) => {
+server.put("/videos/:id", async (req, res) => {
 	const videoID = req.params.id;
 	const { title, description, duration } = req.body;
 	await database.update(videoID, { title, description, duration });
 	return res.status(204).send();
 });
 
-server.delete("/videos/:id", async(req, res) => {
-	const videoID = req.params.id
+server.delete("/videos/:id", async (req, res) => {
+	const videoID = req.params.id;
 	await database.delete(videoID);
 
 	return res.status(204).send();
 });
 
-server.listen(2222, () => {
-	console.log("Server is running on port 2222");
-});
+server.listen(process.env.PORT ?? 2222, "0.0.0.0");
