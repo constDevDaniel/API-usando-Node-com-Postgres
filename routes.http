@@ -15,7 +15,7 @@ GET http://localhost:2222/videos?search=node
 GET http://localhost:2222/videos
 
 ###
-PUT http://localhost:2222/videos/2e82b7c9-cd9c-405b-9131-159795556392
+PUT http://localhost:2222/videos/3cc4fd4b-2001-4850-9c23-084f31455b9a
 Content-Type: application/json
 Accept-Language: pt-BR
 
@@ -26,4 +26,4 @@ Accept-Language: pt-BR
 }
 
 ###
-DELETE http://localhost:2222/videos/195b4aca-b0ea-4267-8402-ed3218746103
+DELETE http://localhost:2222/videos/3cc4fd4b-2001-4850-9c23-084f31455b9a
