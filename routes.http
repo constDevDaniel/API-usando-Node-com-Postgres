@@ -1,21 +1,25 @@
-POST http://localhost:2222/videos
+@onrender_url = https://api-node-postgresjs.onrender.com/
+@localhost_url = http://localhost:2222
+
+###
+POST {{onrender_url}}videos
 Content-Type: application/json
 Accept-Language: pt-BR
 
 {
-    "title": "Video node",
+    "title": "Video 44",
     "description": "Video 1 description",
     "duration": 120
 }
 
 ###
-GET http://localhost:2222/videos?search=node
+GET {{onrender_url}}videos?search=node
 
 ###
-GET http://localhost:2222/videos
+GET {{onrender_url}}videos
 
 ###
-PUT http://localhost:2222/videos/3cc4fd4b-2001-4850-9c23-084f31455b9a
+PUT {{onrender_url}}videos/3cc4fd4b-2001-4850-9c23-084f31455b9a
 Content-Type: application/json
 Accept-Language: pt-BR
 
@@ -26,4 +30,4 @@ Accept-Language: pt-BR
 }
 
 ###
-DELETE http://localhost:2222/videos/3cc4fd4b-2001-4850-9c23-084f31455b9a
+DELETE {{onrender_url}}videos/3cc4fd4b-2001-4850-9c23-084f31455b9a
